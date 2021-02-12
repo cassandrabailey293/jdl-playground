@@ -1,0 +1,31 @@
+{
+  "name": "D",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "Type",
+      "fieldValues": "KEY (value),JUSTKEY"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "c",
+      "otherEntityRelationshipName": "a",
+      "relationshipValidateRules": "required",
+      "relationshipName": "d",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210212181421",
+  "entityTableName": "d",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["myApp", "myApp2"]
+}
