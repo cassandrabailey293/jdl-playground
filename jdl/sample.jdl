@@ -1,3 +1,5 @@
+DEFAULT_MIN = 0
+DEFAULT_MAX = 41
 
 application {
   config {
@@ -30,18 +32,39 @@ application {
     authenticationType jwt,
     prodDatabaseType mysql,
   }
-  entities C
+  entities C, D
+}
+
+/** Javadoc Comment */
+enum Type {
+    KEY(value),
+    JUSTKEY
 }
 
 entity A {}
 
 entity B {}
 
-entity C {}
+entity C {
+    count Integer min(DEFAULT_MIN) max(DEFAULT_MAX)
+}
 
-entity D {}
+entity D {
+    name Type
+}
+
+
 
 relationship OneToMany {
   A to B
 }
+
+relationship OneToOne {
+  C{a} to D{d required}
+}
     
+//The same way you can apply options to entities in the CLI, you can also do that in the JDL:
+readOnly A
+dto * with mapstruct
+service * with serviceImpl
+// paginate A, B with pager
